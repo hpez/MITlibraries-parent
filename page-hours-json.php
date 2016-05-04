@@ -120,8 +120,8 @@ $alertContent = cf("alert_content");
       cssName: "default",
       showAlways: true,
       selectedDate: todayDate,
-      prevArrow: '<i class="icon-arrow-left"></i>',
-      nextArrow: '<i class="icon-arrow-right"></i>',
+      prevArrow: '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      nextArrow: '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
       dowNames: "SMTWTFS",
       dowOffset: 1,
     onClick: function(target, cell, date, date2) {
@@ -145,7 +145,7 @@ $alertContent = cf("alert_content");
       <div id="hourNav" style="width: 1008px;">
         <div id="prevWeek"> <i class="icon-arrow-left"></i> <a href="<?php echo $path."?d=".$prevWeek; ?>">Previous week</a> </div>
         <div id="thisWeek"> <a href="<?php echo $path."?d=".$thisWeek; ?>">This week</a> </div>
-        <div id="nextWeek"> <a href="<?php echo $path."?d=".$nextWeek; ?>">Next week</a> <i class="icon-arrow-right"></i> </div>
+        <div id="nextWeek"> <a href="<?php echo $path."?d=".$nextWeek; ?>">Next week</a> <i class="fa fa-arrow-right" aria-hidden="true"></i> </div>
       </div>
     </div>
     <style type="text/css">
@@ -247,7 +247,7 @@ $mapPage = "/locations/#!";
               <span class="hidden">|</span> <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
               <?php } ?>
               <?php if(get_field('alert_title', $locationId)){ ?>
-              <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
+              <div class="libraryAlert"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 	              <div class="alertText">
               <div class="la-title"><?php the_field('alert_title', $locationId); ?></div>
                 <?php the_field('alert_content', $locationId); ?>
@@ -372,7 +372,7 @@ $pageLink = get_permalink($pageID);
             <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7"> | Study 24/7</a>
             <?php } ?>
               <?php if(get_field('alert_title', $locationId)){ ?>
-              <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
+              <div class="libraryAlert"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 	              <div class="alertText">
               <div class="la-title"><?php the_field('alert_title', $locationId); ?></div>
                 <?php the_field('alert_content', $locationId); ?>
