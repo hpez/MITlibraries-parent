@@ -175,12 +175,12 @@
 	position: relative;
 }
 
-.hrList .libraryAlert .icon-exclamation-sign {
+.hrList .libraryAlert .fa-exclamation-circle {
 	color: #ffcc33;
 	float: left;
 	font-size: 2em;
 	position: absolute;
-	top: 0;
+	top: 15%;
 	left: 3.5%;
 }
 
@@ -415,12 +415,12 @@ div.libraryAlert {
 		
 	}
 	
-	.hrList .libraryAlert .icon-exclamation-sign {
+	.hrList .libraryAlert .fa-exclamation-circle {
 		color: #ffcc33;
 		float: left;
-		font-size: 1.5em;
+		font-size: 2em;
 		position: absolute;
-		top: 2.5%;
+		top: 10%;
 		left: 2.5%;
 	}	
 /*	.nameHolder {
