@@ -1,6 +1,6 @@
 $(function(){
 
-// cookie set up from PPK https://www.quirksmode.org/js/cookies.html
+// cookie set-up from PPK https://www.quirksmode.org/js/cookies.html
   function createCookie(name,value,days) {
     if (days) {
       var date = new Date();
@@ -26,14 +26,31 @@ $(function(){
     createCookie(name,"",-1);
   }
 
-  var splashStatus = readCookie('brand_closed');
-  if (splashStatus == 'true') {
-  	$('.brand-splash').removeClass('big').addClass('compact');
-  } 
+  // What variable are we using to store toggle status?
+  var toggle = 'brand_closed';
+
+  // This checks if the user has already closed the branding header.
+  // If localStorage
+  if (Modernizr.localstorage) {
+    // Check for the localStorage alert ID item
+    if (localStorage.getItem(toggle) === 'true') {
+      $('.brand-splash').removeClass('big').addClass('compact');
+    } 
+  } else {
+  	var c = readCookie(toggle);
+  	if (c == 'true') {
+  		$('.brand-splash').removeClass('big').addClass('compact');
+  	} 
+  }
 
 	$('.btn-minimize').click(function(){
 		$('.brand-splash').removeClass('big').addClass('compact');
-		createCookie('brand_closed','true',99999);
+		if (Modernizr.localstorage) {
+		  // Set the localStorage item, using the post ID
+		  localStorage.setItem(toggle, 'true');
+		} else {
+			createCookie(toggle,'true',99999);		
+		}
 		return false;
 	});
 
